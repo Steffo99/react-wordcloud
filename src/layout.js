@@ -46,12 +46,12 @@ export function render({ callbacks, options, random, selection, words }) {
     enter => {
       let text = enter
         .append('text')
-        .on('click', word => {
+        .on('click', (event, word) => {
           if (onWordClick) {
             onWordClick(word, event);
           }
         })
-        .on('mouseover', word => {
+        .on('mouseover', (event, word) => {
           if (
             enableTooltip &&
             (!tooltipInstance || tooltipInstance.isDestroyed)
@@ -72,7 +72,7 @@ export function render({ callbacks, options, random, selection, words }) {
             onWordMouseOver(word, event);
           }
         })
-        .on('mouseout', word => {
+        .on('mouseout', (event, word) => {
           if (tooltipInstance && !tooltipInstance.state.isVisible) {
             tooltipInstance.destroy();
           }
@@ -195,7 +195,7 @@ export function layout({
         const fontScale = getFontScale(sortedWords, fontSizes, scale);
         return fontScale(word.value);
       })
-      .on('end', computedWords => {
+      .on('end', (event, computedWords) => {
         /** KNOWN ISSUE: https://github.com/jasondavies/d3-cloud/issues/36
          * Recursively layout and decrease font-sizes by a SHRINK_FACTOR.
          * Bail out with a warning message after MAX_LAYOUT_ATTEMPTS.
