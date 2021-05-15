@@ -2,7 +2,6 @@ import 'd3-transition';
 
 import { descending } from 'd3-array';
 import d3Cloud from 'd3-cloud';
-import { event } from 'd3-selection';
 import clonedeep from 'lodash.clonedeep';
 import seedrandom from 'seedrandom';
 import tippy from 'tippy.js';
