@@ -1,6 +1,6 @@
 {
   "name": "react-wordcloud",
-  "version": "1.2.8",
+  "version": "1.2.9",
   "description": "Simple React + D3 wordcloud component with powerful features.",
   "license": "MIT",
   "homepage": "https://react-wordcloud.netlify.com/",
@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "microbundle --jsx React.createElement",
-    "lint": "xo --fix; tsc",
+    "lint": "xo --fix; tsc"
   },
   "main": "dist/index.js",
   "module": "dist/index.module.js",
